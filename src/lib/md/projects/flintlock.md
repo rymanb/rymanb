@@ -2,7 +2,7 @@
 
 ---
 
-The Flintlock game engine is a custom C++ game engine built at DigiPen Institute of Technology. The Initial Purpose for developing the engine was for the game [Chlorofell](http://rymanb/projects/chlorofell), however, the engine is flexible enough to support the development of other games such as [Elemental Surge](http://rymanb/projects/elementalsurge).
+The Flintlock game engine is a custom C++ game engine built at DigiPen Institute of Technology. The Initial Purpose for developing the engine was for the game [Chlorofell](http://rymanb/projects/chlorofell), however, the engine is flexible enough to support the development of other games such as [Elemental Surge](http://rymanb.com/projects/elementalsurge).
 
 <br>
 

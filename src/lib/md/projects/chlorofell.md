@@ -2,7 +2,7 @@
 
 ---
 
-[Chlorofell](https://games.digipen.edu/games/chlorofell/) is a top-down faux-isometric 2d shooter game with manual reloading and elemental ammo as core mechanics. The game was created at DigiPen Institute of technology by a team of 12 students comprising of programmers, game designers, artists, and a sound designer. The game is written in the custom C++ [Flintlock Engine](http://rymanb/projects/flintlock), and was developed over a year.
+[Chlorofell](https://games.digipen.edu/games/chlorofell/) is a top-down faux-isometric 2d shooter game with manual reloading and elemental ammo as core mechanics. The game was created at DigiPen Institute of technology by a team of 12 students comprising of programmers, game designers, artists, and a sound designer. The game is written in the custom C++ [Flintlock Engine](http://rymanb.com/projects/flintlock), and was developed over a year.
 
 
 <br>
