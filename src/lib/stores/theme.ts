@@ -37,4 +37,5 @@ export const onHydrated = () => {
 	} else {
 		toggleTheme(JSON.parse(fromStore));
 	}
+
 };

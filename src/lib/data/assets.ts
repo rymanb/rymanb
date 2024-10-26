@@ -14,6 +14,7 @@ const Assets = {
 	Cpp: a('cpp.svg'),
 	Celery: a('celery.svg'),
 	Django: a('django.svg'),
+	DigiPen: a('dp.jpg'),
 	FastApi: a('fastapi'),
 	Flask: a('flask.svg'),
 	Go: a('go.svg'),
@@ -70,7 +71,15 @@ const Assets = {
 	Jest: a('jest.png'),
 	Unocss: a('unocss.svg'),
 	Ruvy: a('ruvy.svg'),
-	Postcss: a('postcss.svg')
+	Postcss: a('postcss.svg'),
+	MySql: a('mysql.png'),
+	UE: a('ue.svg'),
+	Unity: a('unity.png'),
+	Git: a('git.png'),
+	Svn: a('svn.svg'),
+	Windows: a('win.png'),
+	Linux: a('lin.png'),
+	OpenGL: a('opengl.svg')
 };
 
 export default Assets;

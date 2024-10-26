@@ -15,9 +15,13 @@
 	import CardDivider from '$lib/components/Card/CardDivider.svelte';
 	import Screenshot from '$lib/components/Screenshot/Screenshot.svelte';
 
+	import Youtube from "svelte-youtube-embed"
+
 	export let data: { project?: Project };
 
 	const screenshots = data.project?.screenshots ?? [];
+
+	const youtubeId = data.project?.vidId;
 
 	let screenIndex: number | undefined = undefined;
 
@@ -91,6 +95,9 @@
 				<div class="w-100% m-t-8">
 					<CardDivider />
 				</div>
+				{#if youtubeId}
+					<Youtube id={youtubeId} />
+				{/if}
 				{#if screenshots.length > 0}
 					<div
 						class="px-10px grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-t-10 "

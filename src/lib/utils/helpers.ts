@@ -169,3 +169,20 @@ export function computeExactDuration(from: Date, to: Date = new Date()): string 
 		})
 		.join(' ');
 }
+
+export function getDateRangeString(from: Date, to: Date = new Date()): string
+{
+
+	const options: Intl.DateTimeFormatOptions = {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric'
+	};
+
+	from.to
+
+	const formattedFrom = from.toLocaleDateString(undefined,options);
+	const formattedTo = to.toLocaleDateString(undefined, options);
+
+	return formattedFrom + " - " + formattedTo;
+}
