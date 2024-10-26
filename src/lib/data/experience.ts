@@ -6,7 +6,7 @@ export const items: Array<Experience> = [
 	{
 		slug: 'tosoftware',
 		company: 'Student Team Project',
-		description: 'Student project of 22 Programmers, Designers, Audio Designers, and Artists creating the game [Remanance](http://ryman.b/projects/flintlock).',
+		description: 'Student project of 22 Programmers, Designers, Audio Designers, and Artists creating the game [Remanance](http://rymanb/projects/remanance).',
 		contract: ContractType.SelfEmployed,
 		type: 'Software Development',
 		location: 'DigiPen Institute of Technology',

@@ -123,7 +123,7 @@ export const items: Array<Project> = [
 	{
 		slug: 'elementalsurge',
 		color: '#5e95e3',
-		description: 'Built using the [FlintLock Engine](http://ryman.b/projects/flintlock), Elemental Surge is a captivating action platformer that embarks players on an epic journey to ascend a towering castle and confront a once-mighty but fallen king. With a blend of platforming challenges, combat, and an intriguing storyline, the game offers an immersive experience filled with adventure, danger, and magic.',
+		description: 'Built using the [FlintLock Engine](http://rymanb/projects/flintlock), Elemental Surge is a captivating action platformer that embarks players on an epic journey to ascend a towering castle and confront a once-mighty but fallen king. With a blend of platforming challenges, combat, and an intriguing storyline, the game offers an immersive experience filled with adventure, danger, and magic.',
 		shortDescription:
 			'Elemental Surge is a captivating action platformer that embarks players on an epic journey to ascend a towering castle and confront a once-mighty but fallen king. With a blend of platforming challenges, combat, and an intriguing storyline, the game offers an immersive experience filled with adventure, danger, and magic.',
 		links: [{ to: 'https://games.digipen.edu/games/elemental-surge', label: 'Download Page' }],
