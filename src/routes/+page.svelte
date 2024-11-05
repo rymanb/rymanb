@@ -10,7 +10,7 @@
 	import { getPlatfromIcon } from '$lib/utils';
 	import { getAssetURL } from '$lib/data/assets';
 	import { base } from '$app/paths';
-
+	import { onMount } from 'svelte';
 	import Card from '$lib/components/Card/Card.svelte';
 
 	const isEmail = (email: string): boolean => {
@@ -19,6 +19,26 @@
 
 		return !isBlank(email) && reg.test(email);
 	};
+
+	onMount(async () => {
+	// Create the observer
+	const observer = new IntersectionObserver(entries => {
+		// Loop over the entries
+		entries.forEach(entry => {
+			// If the element is visible
+			if (entry.isIntersecting) {
+			// Add the animation class
+			entry.target.classList.add('fade-in-animation');
+			}
+		});
+		});
+		
+
+	// Tell the observer which elements to track
+	document.querySelectorAll('.fade-in').forEach(square => {
+		observer.observe(square);
+	});
+});
 </script>
 
 <svelte:head>
@@ -53,14 +73,14 @@
 
 
 <div class="flex-1 md:flex-col md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-5%">
-	<div class="md:flex-1 gap-10px">
+	<div class="md:flex-1 gap-10px p-20px">
 		<!-- core Technologies header-->
-		<h1 class="text-5xl  lg:text-center">Current Technologies</h1>
-		<p class="text-[var(--tertiary-text)]  text-center md:text-center text-sm font-extralight p-5px">These are the technologies I am most proficient in and actively use.</p>
+		<h1 class="fade-in text-5xl  lg:text-center">Current Technologies</h1>
+		<p class="fade-in text-[var(--tertiary-text)]  text-center md:text-center text-sm font-extralight p-5px">These are the technologies I am most proficient in and actively use.</p>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-5 p-5">
 			{#each skills as skill}
 				<Card
-				classes={['cursor-pointer decoration-none']}
+				classes={['fade-in cursor-pointer decoration-none']}
 				tiltDegree={1}
 				href={`${base}/skills/${skill.slug}`}
 				bgImg={getAssetURL(skill.logo)}
@@ -73,21 +93,19 @@
 			{/each}
 
 		</div>
-		<div>
+		<!-- div with item at center-->
+		<div class="p-5 flex justify-center">
+			<a href="{base}/skills" class="no-underline text-[var(--tertiary-text)]">
+			<!-- button to view all skills-->
+			<button class="fade-in cursor-pointerinline-flex gap-2.5 h-12 animate-shimmer items-center justify-center rounded-md border-solid border-slate px-6 font-medium text-sm sm:text-base text-slate-200 flex">
+				<p>See My Work</p>
 
-			<!-- card to more skills on right side-->
-			 
-			<div class="col gap-5 mb-7 md:col-span-2 lg:col-span-3 p-5">
-				<Card
-				classes={['cursor-pointer decoration-none']}
-				tiltDegree={1}
-				href={`${base}/skills`}
-				color={'#27273a'}
-				>
-					<!--more skills text center-->
-					<p class="text-[var(--tertiary-text)] text-center">More Skills</p>
-				</Card>
-			</div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
+					<path d="m9 18 6-6-6-6"></path>
+				</svg>
+			</button>
+			
+		</a>
 		</div>
 
 

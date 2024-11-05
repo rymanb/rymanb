@@ -48,8 +48,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"bootstrap": "^5.3.3",
 		"dayjs": "^1.11.10",
-		"svelte-youtube-embed": "^0.3.1"
+		"svelte-youtube-embed": "^0.3.1",
+		"taos": "^1.0.5"
 	},
 	"description": "Vercel-like style portfolio template for developers.",
 	"main": "svelte.config.js",

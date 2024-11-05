@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
@@ -371,7 +372,7 @@ body {
 }
 
 .bg-grid {
-	background-image: radial-gradient(circle at top, transparent 0%, var(--main) 75%),
+	background-image: radial-gradient(circle at center, transparent 30%, var(--main)),
 	url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
 	background-repeat: repeat;
 	position: absolute;
@@ -390,3 +391,65 @@ body {
 }
 
 
+@keyframes shimmer {
+    0% {
+        background-position: 0 0
+    }
+
+    to {
+        background-position: -200% 0
+    }
+}
+
+.animate-shimmer {
+	background-image: linear-gradient(110deg,#1A1A1A,45%,#262626,55%,#1A1A1A);
+    animation: shimmer 2s linear infinite;
+	background-size: 200% 100%;
+}
+
+.animate-shimmer:hover {
+	background-image: linear-gradient(110deg,#262626,45%,#404040,55%,#262626);
+}
+
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.fade-in-animation {
+		animation: fadeIn 1s ease;
+	}
+}
+
+.fade-in {
+	position: relative;
+}
+
+@keyframes wipe-enter {
+	0% {
+		transform: scale(0, .025);
+	}
+	50% {
+		transform: scale(1, .025);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.square-animation {
+	  animation: wipe-enter 1s 1;
+	}
+  }
+
+  .square {
+	width: 200px;
+	height: 200px;
+	background: orange;
+	// etc...
+  }
