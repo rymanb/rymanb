@@ -26,13 +26,11 @@
 
 	.body {
 		margin: 0px;
-		// background-color: var(--main);
 		color: var(--main-text);
 		font-family: var(--text-f);
 		display: flex;
 		flex-direction: column;
 		transition-duration: 200ms;
-
 		letter-spacing: 1px;
 
 		min-height: 100vh;

@@ -24,6 +24,7 @@
 <svelte:head>
 	<title>{useTitle(title, titleSuffix)}</title>
 </svelte:head>
+<div class="bg-grid"></div>
 <div
 	class="col self-center flex-1 md:flex-row md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-5%"
 >	
@@ -54,7 +55,8 @@
 <div class="flex-1 md:flex-col md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-5%">
 	<div class="md:flex-1 gap-10px">
 		<!-- core Technologies header-->
-		<h1 class="md:text-left">Core Technologies</h1>
+		<h1 class="text-5xl  lg:text-center">Current Technologies</h1>
+		<p class="text-[var(--tertiary-text)]  text-center md:text-center text-sm font-extralight p-5px">These are the technologies I am most proficient in and actively use.</p>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-5 p-5">
 			{#each skills as skill}
 				<Card
@@ -80,8 +82,7 @@
 				classes={['cursor-pointer decoration-none']}
 				tiltDegree={1}
 				href={`${base}/skills`}
-				bgImg={getAssetURL('more-skills.jpg')}
-				color={'#000'}
+				color={'#27273a'}
 				>
 					<!--more skills text center-->
 					<p class="text-[var(--tertiary-text)] text-center">More Skills</p>

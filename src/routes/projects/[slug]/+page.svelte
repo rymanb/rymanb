@@ -55,7 +55,7 @@
 					<div class="row-center flex-wrap text-[0.9em] text-[var(--tertiary-text)] m-b-2">
 						{#each data.project.links as item}
 							<Chip href={item.to}>
-								<div class="row-center gap-2">
+								<div class="row-center gap-2 ">
 									<UIcon icon="i-carbon-link" />
 									<span>{item.label}</span>
 								</div>
@@ -82,7 +82,7 @@
 				</div>
 			</Banner>
 			<div class="pt-3 pb-1 overflow-x-hidden w-full">
-				<div class="px-10px m-y-5">
+				<div class="px-10px m-y-5 ">
 					{#if data.project.description}
 						<Markdown content={data.project.description} />
 					{:else}
