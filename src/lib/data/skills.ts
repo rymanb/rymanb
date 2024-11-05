@@ -40,7 +40,8 @@ export const items = [
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
 		logo: Assets.Cpp,
 		name: 'C++',
-		category: 'pro-lang'
+		category: 'pro-lang',
+		core: true
 	}),
 	defineSkill({
 		slug: 'C',
@@ -58,7 +59,8 @@ export const items = [
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
 		logo: Assets.Python,
 		name: 'Python',
-		category: 'pro-lang'
+		category: 'pro-lang',
+		core: true
 	}),
 	defineSkill({
 		slug: 'C#',
@@ -126,7 +128,8 @@ export const items = [
 		description: svelte,
 		logo: Assets.Docker,
 		name: 'docker',
-		category: 'devops'
+		category: 'devops',
+		core: true
 	}),
 	defineSkill({
 		slug: 'node',
@@ -134,7 +137,8 @@ export const items = [
 		description: svelte,
 		logo: Assets.NodeJs,
 		name: 'Node JS',
-		category: 'env'
+		category: 'env',
+		core: true
 	}),
 	defineSkill({
 		slug: 'ue',
@@ -142,7 +146,8 @@ export const items = [
 		description: svelte,
 		logo: Assets.UE,
 		name: 'Unreal Engine 5',
-		category: 'engine'
+		category: 'engine',
+		core: true
 	}),
 	defineSkill({
 		slug: 'Unity',
@@ -174,7 +179,8 @@ export const items = [
 		description: svelte,
 		logo: Assets.Git,
 		name: 'Git',
-		category: 'devtools'
+		category: 'devtools',
+		core: true
 	}),
 	defineSkill({
 		slug: 'svn',
@@ -207,6 +213,14 @@ export const title = 'Skills';
 export const getSkills = (
 	...slugs: Array<StringWithAutoComplete<(typeof items)[number]['slug']>>
 ): Array<Skill> => items.filter((it) => slugs.includes(it.slug));
+
+// get all core skills which are marked as core make sure to include category
+export const getCoreSkills = (): Array<Skill> => items.filter((it) => it.core);
+
+// get category by slug
+export const getCategoryBySlug = (
+	slug: StringWithAutoComplete<(typeof categories)[number]['slug']>
+): SkillCategory | undefined => categories.find((it) => it.slug === slug);
 
 export const groupByCategory = (
 	query: string

@@ -5,9 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-	--dark-0: #000;
+	--dark-0: #060610;
 	--dark-00: #3b3b3b;
-	--dark-1: #1e1e1e;
+	--dark-1: #1e1e2e;
 	--dark-2: #2e2e2e;
 	--dark-3: #3e3e3e;
 	--dark-4: #4e4e4e;
@@ -57,6 +57,9 @@
 
 body {
 	margin: 0px;
+	/* Vertical lines */
+	background-color: var(--main);
+
 }
 
 * {

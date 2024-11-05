@@ -26,7 +26,7 @@
 
 	.body {
 		margin: 0px;
-		background-color: var(--main);
+		// background-color: var(--main);
 		color: var(--main-text);
 		font-family: var(--text-f);
 		display: flex;

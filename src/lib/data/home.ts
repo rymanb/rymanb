@@ -1,5 +1,5 @@
 import { Platform } from '$lib/types';
-import { getSkills } from './skills';
+import { getCoreSkills, getSkills } from './skills';
 
 export const title = 'Home';
 
@@ -22,4 +22,4 @@ export const links: Array<{ platform: Platform; link: string }> = [
 	}
 ];
 
-export const skills = getSkills('C++', 'C', 'C#', 'Python', 'ue', 'Docker');
+export const skills = getCoreSkills();
