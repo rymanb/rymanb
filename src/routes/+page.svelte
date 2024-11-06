@@ -12,6 +12,8 @@
 	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 	import Card from '$lib/components/Card/Card.svelte';
+	import { items as Projects} from '@data/projects';
+	import type { Project } from '$lib/types';
 
 	const isEmail = (email: string): boolean => {
 		const reg =
@@ -73,7 +75,7 @@
 
 
 <div class="flex-1 md:flex-col md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-5%">
-	<div class="md:flex-1 gap-10px p-20px">
+	<div class="md:flex-1 gap-10px">
 		<!-- core Technologies header-->
 		<h1 class="fade-in text-5xl  lg:text-center">Current Technologies</h1>
 		<p class="fade-in text-[var(--tertiary-text)]  text-center md:text-center text-sm font-extralight p-5px">These are the technologies I am most proficient in and actively use.</p>
@@ -88,17 +90,17 @@
 				>
 					<p class="text-[var(--tertiary-text)]">{skill.name}</p>
 					<!--skill category, make text smaller-->
-					<p class="text-[var(--tertiary-text)] text-xs">{skill.category.name}</p>
+					<p class="text-[var(--tertiary-text)] text-xs">{skill.category?.name}</p>
 				</Card>
 			{/each}
 
 		</div>
 		<!-- div with item at center-->
-		<div class="p-5 flex justify-center">
+		<div class="fade-in p-5 flex justify-center">
 			<a href="{base}/skills" class="no-underline text-[var(--tertiary-text)]">
 			<!-- button to view all skills-->
-			<button class="fade-in cursor-pointerinline-flex gap-2.5 h-12 animate-shimmer items-center justify-center rounded-md border-solid border-slate px-6 font-medium text-sm sm:text-base text-slate-200 flex">
-				<p>See My Work</p>
+			<button class="cursor-pointerinline-flex gap-2.5 h-12 animate-shimmer items-center justify-center rounded-md border-solid border-slate px-6 font-medium text-sm sm:text-base text-slate-200 flex">
+				<p>View More Skills</p>
 
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
 					<path d="m9 18 6-6-6-6"></path>
@@ -109,6 +111,25 @@
 		</div>
 
 
+	</div>
+
+	<div class="flex-1 gap-10px p-200px">
+		<h1 class="fade-in text-5xl  lg:text-center">Projects</h1>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-5 p-5">
+
+			{#each Projects as project}
+				<Card
+				classes={['fade-in cursor-pointer decoration-none']}
+				tiltDegree={1}
+				href={`${base}/projects/${project.slug}`}
+				bgImg={getAssetURL(project.logo)}
+				color={project.color}
+				>
+					<p class="text-[var(--tertiary-text)]">{project.name}</p>
+					<p class="text-[var(--tertiary-text)] text-xs">{project.skills.map((skill) => skill.name).join(', ')}</p>
+				</Card>
+			{/each}
+		</div>
 	</div>
 </div>
 
