@@ -14,6 +14,7 @@
 	import Card from '$lib/components/Card/Card.svelte';
 	import { items as Projects} from '@data/projects';
 	import type { Project } from '$lib/types';
+	import Chip from '$lib/components/Chip/Chip.svelte';
 
 	const isEmail = (email: string): boolean => {
 		const reg =
@@ -40,6 +41,7 @@
 	document.querySelectorAll('.fade-in').forEach(square => {
 		observer.observe(square);
 	});
+
 });
 </script>
 
@@ -99,7 +101,7 @@
 		<div class="fade-in p-5 flex justify-center">
 			<a href="{base}/skills" class="no-underline text-[var(--tertiary-text)]">
 			<!-- button to view all skills-->
-			<button class="cursor-pointerinline-flex gap-2.5 h-12 animate-shimmer items-center justify-center rounded-md border-solid border-slate px-6 font-medium text-sm sm:text-base text-slate-200 flex">
+			<button class="cursor-pointer inline-flex gap-2.5 h-12 animate-shimmer items-center justify-center rounded-md border-solid border-slate px-6 font-medium text-sm sm:text-base text-slate-200 flex">
 				<p>View More Skills</p>
 
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
@@ -113,23 +115,71 @@
 
 	</div>
 
-	<div class="flex-1 gap-10px p-200px">
+	<div class="flex-1 gap-10px py-150px">
 		<h1 class="fade-in text-5xl  lg:text-center">Projects</h1>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-5 p-5">
+		<div class="grid lg:grid-cols-2 gap-2 md:gap-3 lg:gap-5 p-5">
 
-			{#each Projects as project}
+			{#each Projects.slice(0, 4) as project}
 				<Card
 				classes={['fade-in cursor-pointer decoration-none']}
 				tiltDegree={1}
 				href={`${base}/projects/${project.slug}`}
-				bgImg={getAssetURL(project.logo)}
 				color={project.color}
 				>
-					<p class="text-[var(--tertiary-text)]">{project.name}</p>
-					<p class="text-[var(--tertiary-text)] text-xs">{project.skills.map((skill) => skill.name).join(', ')}</p>
+					<div class="flex flex-col gap-2 p-5px">
+						<!-- image make it as large as it can be and fit within card-->
+						<img src="https://andrijaweb.vercel.app/_next/image?url=%2Fimgs%2Fprojects%2Fportfolio-mockup2.png&w=1080&q=75" alt="project" class="w-full h-full object-cover rounded-md" />
+						<p class="text-[var(--tertiary-text)] font-bold text-28px py-10px">{project.name}</p>
+						<!-- <p class="text-[var(--tertiary-text)] text-xs">{project.skills.map((skill) => skill.name).join(', ')}</p> -->
+						 <div class="flex flex-row gap-2">
+							{#each project.skills as item}
+								<Chip
+									classes="inline-flex flex-row items-center justify-center"
+									href={`${base}/skills/${item.slug}`}
+								>
+									<span class="text-[0.9em]">{item.name}</span>
+								</Chip>
+							{/each}
+						 </div>
+					</div>
 				</Card>
 			{/each}
 		</div>
+
+		<div class="fade-in p-5 flex justify-center">
+			<a href="{base}/projects" class="no-underline text-[var(--tertiary-text)]">
+			<!-- button to view all skills-->
+			<button class="cursor-pointer inline-flex gap-2.5 h-12 animate-shimmer items-center justify-center rounded-md border-solid border-slate px-6 font-medium text-sm sm:text-base text-slate-200 flex">
+				<p>View More Projects</p>
+
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
+					<path d="m9 18 6-6-6-6"></path>
+				</svg>
+			</button>
+			
+		</a>
+		</div>
 	</div>
+
+	<div class="p-5">
+	<div class="row justify-center md:justify-center p-x-0px gap-2">
+		{#each links as link}
+			<a
+				class="decoration-none"
+				href={`${isEmail(link.link) ? 'mailto:' : ''}${link.link}`}
+				target="_blank"
+				rel="noreferrer"
+			>
+				<Icon icon={getPlatfromIcon(link.platform)} color={'var(--accent-text)'} size={'20px'} />
+			</a>
+		{/each}
+	</div>
+	<!--copyright-->
+	<div class="fade-in p-2 flex justify-center">
+		<p class="text-[var(--tertiary-text)] text-sm">© {new Date().getFullYear()} {name} {lastName}</p>
+	</div>
+		</div>
+
+
 </div>
 
