@@ -79,12 +79,12 @@
 <div class="flex-1 md:flex-col md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-5%">
 	<div class="md:flex-1 gap-10px">
 		<!-- core Technologies header-->
-		<h1 class="fade-in text-5xl  lg:text-center">Current Technologies</h1>
+		<h1 class="fade-in text-5xl  text-center">Current Technologies</h1>
 		<p class="fade-in text-[var(--tertiary-text)]  text-center md:text-center text-sm font-extralight p-5px">These are the technologies I am most proficient in and actively use.</p>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-5 p-5">
+		<div class="flex flex-cols flex-wrap gap-2 md:gap-3 lg:gap-5 py-5 justify-center" >
 			{#each skills as skill}
 				<Card
-				classes={['fade-in cursor-pointer decoration-none']}
+				classes={['fade-in cursor-pointer decoration-none min-w-250px']}
 				tiltDegree={1}
 				href={`${base}/skills/${skill.slug}`}
 				bgImg={getAssetURL(skill.logo)}
@@ -116,8 +116,8 @@
 	</div>
 
 	<div class="flex-1 gap-10px py-150px">
-		<h1 class="fade-in text-5xl  lg:text-center">Projects</h1>
-		<div class="grid lg:grid-cols-2 gap-2 md:gap-3 lg:gap-5 p-5">
+		<h1 class="fade-in text-5xl text-center">Projects</h1>
+		<div class="grid lg:grid-cols-2 gap-2 md:gap-3 lg:gap-5 py-5">
 
 			{#each Projects.slice(0, 4) as project}
 				<Card
@@ -134,6 +134,7 @@
 						 <div class="flex flex-row gap-2">
 							{#each project.skills as item}
 								<Chip
+									border={item.color}
 									classes="inline-flex flex-row items-center justify-center"
 									href={`${base}/skills/${item.slug}`}
 								>
@@ -162,7 +163,7 @@
 	</div>
 
 	<div class="p-5">
-	<div class="row justify-center md:justify-center p-x-0px gap-2">
+	<div class="fade-in row justify-center md:justify-center p-x-0px gap-2">
 		{#each links as link}
 			<a
 				class="decoration-none"

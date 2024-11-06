@@ -71,22 +71,24 @@
 </script>
 
 <SearchPage {title} on:search={onSearch}>
-	<div class="projects-filters">
+	<div class="flex flex-cols justify-center">
 		{#each filters as tech}
-			<Chip active={tech.isSelected} classes={'text-0.8em'} on:click={() => onSelected(tech.slug)}
+			<Chip active={tech.isSelected} classes={'text-0.8em'} border={tech.color} on:click={() => onSelected(tech.slug)}
 				>{tech.name}</Chip
 			>
 		{/each}
 	</div>
 	{#if displayed.length === 0}
-		<div class="p-5 col-center gap-3 m-y-auto text-[var(--accent-text)] flex-1">
+		<div class="fade-in-animation p-5 col-center gap-3 m-y-auto text-[var(--accent-text)] flex-1">
 			<UIcon icon="i-carbon-cube" classes="text-3.5em" />
 			<p class="font-300">Could not find anything...</p>
 		</div>
 	{:else}
 		<div class="projects-list mt-5">
 			{#each displayed as project}
+			<div class="fade-in-animation max-w-370px">
 				<ProjectCard {project} />
+			</div>
 			{/each}
 		</div>
 	{/if}
@@ -94,15 +96,11 @@
 
 <style lang="scss">
 	.projects-list {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		gap: 20px;
 
-		@media (max-width: 1350px) {
-			grid-template-columns: repeat(2, 1fr);
-		}
-		@media (max-width: 850px) {
-			grid-template-columns: repeat(1, 1fr);
-		}
+		
 	}
 </style>

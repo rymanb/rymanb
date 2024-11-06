@@ -67,6 +67,7 @@
 				logo={getAssetURL(tech.logo)}
 				name={tech.name}
 				href={`${base}/skills/${tech.slug}`}
+				border={tech.color}
 			/>
 		{/each}
 	</div>

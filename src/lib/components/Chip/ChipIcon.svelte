@@ -3,6 +3,7 @@
 
 	export let name = '';
 	export let logo = '';
+	export let border = '[var(--border)]';
 	export let inverted = false;
 	export let grayscale = true;
 
@@ -12,7 +13,7 @@
 <svelte:element
 	this={href ? 'a' : 'div'}
 	{href}
-	class={`chip-icon row-center relative text-inherit decoration-none p-10px m-r-5px m-b-5px border-1px border-solid border-[var(--border)] hover:border-[var(--border-hover)] rounded-10px hover:z-5 ${
+	class={`chip-icon row-center relative text-inherit decoration-none p-10px m-r-5px m-b-5px border-1px border-solid border-${border} hover:border-[var(--border-hover)] rounded-10px hover:z-5 ${
 		href ? 'cursor-pointer' : 'cursor-help'
 	} ${grayscale ? 'grayscale-65 hover:grayscale-0' : ''}`}
 	data-help={name}
