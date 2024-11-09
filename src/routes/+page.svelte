@@ -3,7 +3,7 @@
 	import Icon from '$lib/components/Icon/Icon.svelte';
 	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
 	import { titleSuffix } from '@data/app';
-	import { links, description, lastName, name, title, skills } from '@data/home';
+	import { links, description, lastName, name, title, skills, location } from '@data/home';
 	import { items as skillsItems, groupByCategory, getCategoryBySlug } from '@data/skills';
 	import { useTitle } from '$lib/utils/helpers';
 	import { isBlank } from '@riadh-adrani/utils';
@@ -44,7 +44,6 @@
 
 });
 </script>
-
 <svelte:head>
 	<title>{useTitle(title, titleSuffix)}</title>
 </svelte:head>
@@ -53,8 +52,14 @@
 	class="col self-center flex-1 md:flex-row md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-5%"
 >	
 	<!--name desc and link, size of h screen and be centered-->
-	<div class="h-screen col justify-center gap-5">
-		<MainTitle classes="md:text-center ">{name} {lastName},</MainTitle>
+	<div class="fade-in h-screen col justify-center gap-0">
+		<MainTitle classes="md:text-center p-0">{name} {lastName}</MainTitle>
+		<div class="flex flex-row justify-center items-center pb-2">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill justify-center" viewBox="0 0 16 16">
+				<path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+			</svg>
+			<h3 class="md:text-center"> {location}</h3>
+		</div>
 		<p class="text-[var(--tertiary-text)]  text-center md:text-center text-[1.2em] font-extralight">
 			{description}
 		</p>

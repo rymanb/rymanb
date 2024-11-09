@@ -7,6 +7,8 @@ export const name = 'Ryman';
 
 export const lastName = 'Barnett';
 
+export const location = 'Seattle, WA';
+
 export const description =
 	'2025 Computer science graduate skilled in C++, C#, and Python, with experience in collaborative projects involving up to 22 team members. While I have worked on custom game engines and gameplay programming, I also bring knowledge of cloud services and backend development. Open to a wide range of technical paths, I’m eager to contribute to innovative software projects.';
 
