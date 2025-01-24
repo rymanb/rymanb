@@ -17,6 +17,21 @@ export const items: Array<Experience> = [
 		links: [],
 		logo: Assets.Unknown,
 		shortDescription: 'Student project of 22 Programmers, Designers, Audio Designers, and Artists creating the game Remanance.'
+	},
+	{
+		slug: 'tosoftware',
+		company: 'Student Team Project',
+		description: 'Student project of 22 Programmers, Designers, Audio Designers, and Artists creating the game [Remanance](http://rymanb.com/projects/remanance).',
+		contract: ContractType.SelfEmployed,
+		type: 'Software Development',
+		location: 'DigiPen Institute of Technology',
+		period: { from: new Date(2023, 8) },
+		skills: getSkills('C++', 'ue', 'Docker', 'C#'),
+		name: 'ToSoftware',
+		color: 'red',
+		links: [],
+		logo: Assets.Unknown,
+		shortDescription: 'Student project of 22 Programmers, Designers, Audio Designers, and Artists creating the game Remanance.'
 	}
 ];
 
