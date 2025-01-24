@@ -1,4 +1,4 @@
-import{A as e}from"./index.4c1944f9.js";import{b as n}from"./skills.49bccef1.js";const t=`<h1 style="text-align: center;">About The Project</h1>
+import{A as e}from"./index.7cfe48f1.js";import{b as n}from"./skills.801d7c21.js";const t=`<h1 style="text-align: center;">About The Project</h1>
 
 ---
 
