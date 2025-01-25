@@ -79,7 +79,16 @@ const Assets = {
 	Svn: a('svn.svg'),
 	Windows: a('win.png'),
 	Linux: a('lin.png'),
-	OpenGL: a('opengl.svg')
+	OpenGL: a('opengl.svg'),
+
+	// project logos
+	Remanance: a('Remanance.ico'),
+	Chlorofell: a('Chlorofell.png'),
+	Flintlock: a('Flintlock.png'),
+	RockIt: a('RockIt.png'),
+	ElementalSurge: a('ES.png'),
+	Ratformer: a('rat.png'),
+
 };
 
 export default Assets;

@@ -36,6 +36,7 @@ export interface Item<S extends string = string> {
 export interface Link {
 	to: string;
 	label: string;
+	icon?: string;
 	newTab?: boolean;
 }
 
@@ -62,6 +63,7 @@ export interface Project<S extends string = string> extends Item<S> {
 		to?: Date;
 	};
 	type: string;
+	teamSize?: number;
 	skills: Array<Skill<S>>;
 }
 

@@ -71,7 +71,7 @@
 </script>
 
 <SearchPage {title} on:search={onSearch}>
-	<div class="flex flex-cols justify-center">
+	<div class="flex flex-wrap justify-center">
 		{#each filters as tech}
 			<Chip active={tech.isSelected} classes={'text-0.8em'} border={tech.color} on:click={() => onSelected(tech.slug)}
 				>{tech.name}</Chip

@@ -1,5 +1,6 @@
 <script>
 	import { data, title } from '@data/resume';
+	import PdfViewer from 'svelte-pdf';
 
 	import Chip from '$lib/components/Chip/Chip.svelte';
 	import CommonPage from '$lib/components/CommonPage.svelte';
@@ -8,9 +9,10 @@
 <CommonPage {title}>
 	<div class="resume">
 		{#if data}
-			<a href={data} download>
+			<!-- <a href={data} download>
 				<Chip size={'1.25em'}>Download</Chip>
-			</a>
+			</a> -->
+			<PdfViewer url={data} />
 		{:else}
 			<Chip>Ooops! no CV at the moment.</Chip>
 		{/if}

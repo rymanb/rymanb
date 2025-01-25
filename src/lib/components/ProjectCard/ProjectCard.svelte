@@ -32,7 +32,7 @@
 		<CardTitle title={project.name} />
 		<div class="row">
 			{#each project.links as link}
-				<CardLink label={link.label ?? ''} to={link.to} />
+				<CardLink label={link.label ?? ''} to={link.to} icon={link.icon ?? ''}/>
 			{/each}
 		</div>
 	</div>
@@ -43,6 +43,15 @@
 			<p>{project.type}</p>
 		</div>
 		<CardDivider />
+
+		{#if project.teamSize}
+			<div class="row items-center gap-2">
+				<UIcon icon="i-carbon-group" classes="text-1.25em" />
+				<p>{project.teamSize} Person Team</p>
+			</div>
+			<CardDivider />
+		{/if}
+		
 		<div class="row items-center gap-2">
 			<UIcon icon="i-carbon-time" classes="text-1.25em" />
 			<p>{period}</p>

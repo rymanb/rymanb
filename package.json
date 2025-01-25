@@ -50,6 +50,7 @@
 	"dependencies": {
 		"bootstrap": "^5.3.3",
 		"dayjs": "^1.11.10",
+		"svelte-pdf": "^1.0.24",
 		"svelte-youtube-embed": "^0.3.1",
 		"taos": "^1.0.5"
 	},

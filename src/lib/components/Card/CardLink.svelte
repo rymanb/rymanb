@@ -2,6 +2,7 @@
 	import UIcon from '../Icon/UIcon.svelte';
 
 	export let label: string;
+	export let icon: string;
 	export let to: string;
 </script>
 
@@ -13,7 +14,11 @@
 	rel="noreferrer"
 	data-help={label}
 >
+{#if icon !== ''}
+	<UIcon iconSource={icon} classes="text-[var(--secondary-text)]" />
+{:else}
 	<UIcon icon="i-carbon-link" classes="text-[var(--secondary-text)]" />
+{/if}
 </a>
 
 <style lang="scss">
