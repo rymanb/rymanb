@@ -1,9 +1,16 @@
 <script>
 	import { data, title } from '@data/resume';
-	import PdfViewer from 'svelte-pdf';
 
+	
+	import { onMount } from 'svelte';
 	import Chip from '$lib/components/Chip/Chip.svelte';
 	import CommonPage from '$lib/components/CommonPage.svelte';
+
+	let PdfViewer;
+	onMount(async () => {
+		const module = await import("svelte-pdf");
+		PdfViewer = module.default;
+  	});
 </script>
 
 <CommonPage {title}>
@@ -12,7 +19,7 @@
 			<!-- <a href={data} download>
 				<Chip size={'1.25em'}>Download</Chip>
 			</a> -->
-			<PdfViewer url={data} />
+			<svelte:component this={PdfViewer} url={data} />
 		{:else}
 			<Chip>Ooops! no CV at the moment.</Chip>
 		{/if}
