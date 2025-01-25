@@ -79,7 +79,7 @@
 			>
 		{/each}
 	</div>
-	<div class="flex fade-in-animation justify-center pt-5 pb-2 text-[var(--accent-text)] text-[0.9em]">
+	<div class="flex fade-in-animation justify-center pt-5 pb-2 text-[var(--accent-text)] text-[0.89em]">
 		{displayed.length} projects found
 	</div>
 	{#if displayed.length === 0}
