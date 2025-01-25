@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import { getAssetURL } from '$lib/data/assets';
 	import { title } from '@data/projects';
+	import { onMount } from 'svelte';
 
 	import type { Project } from '$lib/types';
 
@@ -23,6 +24,9 @@
 
 	const youtubeId = data.project?.vidId;
 
+	const desciptionLink = data.project?.descriptionLink;
+
+
 	let screenIndex: number | undefined = undefined;
 
 	$: screenshot =
@@ -31,6 +35,18 @@
 			: undefined;
 
 	$: computedTitle = data.project ? `${data.project.name} - ${title}` : title;
+
+	onMount(async () => {
+		if (desciptionLink) {
+			// download description
+			const res = await fetch(desciptionLink);
+			const text = await res.text();
+			
+			if (data.project) {
+				data.project.description = text;
+			}
+		}
+	});
 </script>
 
 <TabTitle title={computedTitle} />
