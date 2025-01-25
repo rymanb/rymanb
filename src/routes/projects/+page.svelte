@@ -71,12 +71,16 @@
 </script>
 
 <SearchPage {title} on:search={onSearch}>
+
 	<div class="flex flex-wrap justify-center">
 		{#each filters as tech}
 			<Chip active={tech.isSelected} classes={'text-0.8em'} border={tech.color} on:click={() => onSelected(tech.slug)}
 				>{tech.name}</Chip
 			>
 		{/each}
+	</div>
+	<div class="flex fade-in-animation justify-center pt-5 pb-2 text-[var(--accent-text)] text-[0.9em]">
+		{displayed.length} projects found
 	</div>
 	{#if displayed.length === 0}
 		<div class="fade-in-animation p-5 col-center gap-3 m-y-auto text-[var(--accent-text)] flex-1">
@@ -85,6 +89,8 @@
 		</div>
 	{:else}
 		<div class="projects-list mt-5">
+			
+			
 			{#each displayed as project}
 			<div class="fade-in-animation max-w-370px">
 				<ProjectCard {project} />

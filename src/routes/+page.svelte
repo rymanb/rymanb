@@ -133,7 +133,7 @@
 				>
 					<div class="flex flex-col gap-2 p-5px">
 						<!-- image make it as large as it can be and fit within card-->
-						<img src="https://andrijaweb.vercel.app/_next/image?url=%2Fimgs%2Fprojects%2Fportfolio-mockup2.png&w=1080&q=75" alt="project" class="w-full h-full object-cover rounded-md" />
+						<img src={project.screenshots[0].src} alt="project" class="w-full h-full object-cover rounded-md" />
 						<p class="text-[var(--tertiary-text)] font-bold text-28px py-10px">{project.name}</p>
 						<!-- <p class="text-[var(--tertiary-text)] text-xs">{project.skills.map((skill) => skill.name).join(', ')}</p> -->
 						 <div class="flex flex-row gap-2">
