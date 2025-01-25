@@ -4,15 +4,15 @@ import type { Project } from '../types';
 import chlorofell from '../md/projects/chlorofell.md?raw';
 import flintlock from '../md/projects/flintlock.md?raw';
 
-// download markdown from website located here https://github.com/rymanb/Crash-Handler/blob/main/README.md
-const res = await fetch('https://raw.githubusercontent.com/rymanb/Crash-Handler/main/README.md');
-const crashdump = await res.text();
+// // download markdown from website located here https://github.com/rymanb/Crash-Handler/blob/main/README.md
+// const res = await fetch('https://raw.githubusercontent.com/rymanb/Crash-Handler/main/README.md');
+// const crashdump = await res.text();
 
-const res2 = await fetch('https://raw.githubusercontent.com/rymanb/MemoryProfiler/main/README.md');
-const memorymanager = await res2.text();
+// const res2 = await fetch('https://raw.githubusercontent.com/rymanb/MemoryProfiler/main/README.md');
+// const memorymanager = await res2.text();
 
-const res3 = await fetch('https://raw.githubusercontent.com/rymanb/Sampling-Profiler/main/README.md');
-const profiler = await res3.text();
+// const res3 = await fetch('https://raw.githubusercontent.com/rymanb/Sampling-Profiler/main/README.md');
+// const profiler = await res3.text();
 
 
 export const items: Array<Project> = [
@@ -335,7 +335,7 @@ export const items: Array<Project> = [
 	{
 		slug: 'memorymanager',
 		color: '#5e95e3',
-		description: memorymanager,
+		description: 'memorymanager',
 		shortDescription:
 			'Linux and Windows Memory manager and debugger that tracks allocations, deletions, and errors in runtime.',
 		links: [{ to: 'https://github.com/rymanb/MemoryProfiler', label: 'Download Page', icon: 'GitHub' }],
@@ -352,7 +352,7 @@ export const items: Array<Project> = [
 	{
 		slug: 'crashdump',
 		color: '#5e95e3',
-		description: crashdump,
+		description: 'crashdump',
 		shortDescription:
 			'Windows crash dump api developed for easy integration into any project with minimal setup.',
 		links: [{ to: 'https://github.com/rymanb/Crash-Handler', label: 'Download Page', icon: 'GitHub' }],
@@ -369,7 +369,7 @@ export const items: Array<Project> = [
 	{
 		slug: 'profiler',
 		color: '#5e95e3',
-		description: profiler,
+		description: 'profiler',
 		shortDescription:
 			'A simple API that can easily be integrated into any C++ Windows project to easily profile the performance of an application. ',
 		links: [{ to: 'https://github.com/rymanb/Sampling-Profiler', label: 'Download Page', icon: 'GitHub' }],
