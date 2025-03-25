@@ -3,6 +3,7 @@
 	import Icon from '$lib/components/Icon/Icon.svelte';
 	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
 	import { titleSuffix } from '@data/app';
+	import CardLink from '$lib/components/Card/CardLink.svelte';
 	import { links, description, lastName, name, title, skills, location } from '@data/home';
 	import { items as skillsItems, groupByCategory, getCategoryBySlug } from '@data/skills';
 	import { useTitle } from '$lib/utils/helpers';
@@ -134,7 +135,20 @@
 					<div class="flex flex-col gap-2 p-5px">
 						<!-- image make it as large as it can be and fit within card-->
 						<img src={project.screenshots[0].src} alt="project" class="w-full h-full object-cover rounded-md" />
-						<p class="text-[var(--tertiary-text)] font-bold text-28px py-10px">{project.name}</p>
+
+						<div class="m-t-20px row justify-left items-center">
+							<p class="text-[var(--tertiary-text)] font-bold text-28px py-10px">{project.name}</p>
+
+							<div class="row px-10px">
+								<!-- if project has link show frist one -->
+								{#if project.links.length > 0}
+									<CardLink label={project.links[0].label ?? ''} to={project.links[0].to} icon={project.links[0].icon ?? ''} />
+								{/if}
+
+							</div>
+
+						</div>
+
 						<!-- <p class="text-[var(--tertiary-text)] text-xs">{project.skills.map((skill) => skill.name).join(', ')}</p> -->
 						 <div class="flex flex-row gap-2">
 							{#each project.skills as item}

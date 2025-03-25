@@ -127,7 +127,7 @@ export const items = [
 		color: 'orange',
 		description: svelte,
 		logo: Assets.Docker,
-		name: 'docker',
+		name: 'Docker',
 		category: 'devops',
 		core: true
 	}),
@@ -154,7 +154,7 @@ export const items = [
 		color: 'orange',
 		description: svelte,
 		logo: Assets.Unity,
-		name: 'unity',
+		name: 'Unity',
 		category: 'engine'
 	}),
 	defineSkill({
