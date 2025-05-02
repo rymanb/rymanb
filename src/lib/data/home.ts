@@ -10,7 +10,7 @@ export const lastName = 'Barnett';
 export const location = 'Seattle, WA';
 
 export const description =
-	'2025 Computer science graduate skilled in C++, C#, and Python, with experience in collaborative projects involving up to 22 team members. While I have worked on custom game engines and gameplay programming, I also bring knowledge of cloud services and backend development. Open to a wide range of technical paths, I’m eager to contribute to innovative software projects.';
+	'2025 Computer Science graduate with a focus on C++, C#, and Python. I’ve contributed to collaborative projects of up to 23 members, building custom game engines, gameplay systems, and development tools. Alongside engine and systems programming, I have experience in cloud platforms like AWS and Azure and am comfortable with backend development. I’m open to diverse technical paths and driven to build high-performance, innovative software';
 
 export const links: Array<{ platform: Platform; link: string }> = [
 	{ platform: Platform.GitHub, link: 'https://github.com/rymanb/' },
