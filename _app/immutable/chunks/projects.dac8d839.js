@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.0d340c9d.js";import{b as t}from"./skills.b3fdcf10.js";const a=`<h1 style="text-align: center;">About The Project</h1>
+import{A as e}from"./UIcon.1363a775.js";import{b as t}from"./skills.638296c5.js";const a=`<h1 style="text-align: center;">About The Project</h1>
 
 ---
 
